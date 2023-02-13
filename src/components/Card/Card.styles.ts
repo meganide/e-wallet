@@ -3,9 +3,12 @@ import styled from 'styled-components';
 
 interface IProps {
   background: string;
+  isStack?: boolean;
+  cardNumber?: number;
 }
 
 const Card = styled.section`
+  width: 100%;
   background: linear-gradient(
       248.04deg,
       rgba(255, 255, 255, 0.15) 0%,
@@ -16,6 +19,8 @@ const Card = styled.section`
   border-radius: 0.5rem;
   padding: 1.5rem;
   max-width: 382px;
+  position: ${(props: IProps) => props.isStack && 'absolute'};
+  top: ${(props: IProps) => props.cardNumber && `${props.cardNumber * 3}rem`};
 `;
 
 const CardHeader = styled.section`

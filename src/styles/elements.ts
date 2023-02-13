@@ -18,7 +18,6 @@ const H1 = styled.h1`
 const Paragraph = styled.p`
   font-family: 'PT Mono', monospace;
   font-size: ${(props: IProps) => (props.fontSize ? props.fontSize : '1.6rem')};
-  box-shadow: 0.5px 0.5px 0px 0px #fefefe3d inset;
   text-align: center;
   margin: ${(props: IProps) => props.margin};
   color: ${(props: IProps) => props.color};
