@@ -9,11 +9,7 @@ interface IProps {
 
 const Card = styled.section`
   width: 100%;
-  background: linear-gradient(
-      248.04deg,
-      rgba(255, 255, 255, 0.15) 0%,
-      rgba(255, 255, 255, 0) 99.07%
-    ),
+  background: linear-gradient(248.04deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0) 99.07%),
     ${(props: IProps) => props.background};
   box-shadow: 0px 0px 0.5rem rgba(0, 0, 0, 0.25);
   border-radius: 0.5rem;

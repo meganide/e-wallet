@@ -22,8 +22,6 @@ function Card(props: IProps) {
 
   const vendorBackgroundColor = getBackgroundColor(cardData.vendor);
 
-  
-
   return (
     <Styled.Card background={vendorBackgroundColor} {...rest}>
       <Styled.CardHeader>
