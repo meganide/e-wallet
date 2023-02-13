@@ -16,7 +16,8 @@ const Card = styled.section`
   padding: 1.5rem;
   max-width: 382px;
   position: ${(props: IProps) => props.isStack && 'absolute'};
-  top: ${(props: IProps) => props.cardNumber && `${props.cardNumber * 3}rem`};
+  top: ${(props: IProps) => props.cardNumber && `${(props.cardNumber - 1) * 4}rem`};
+  cursor: ${(props: IProps) => props.isStack && 'pointer'}
 `;
 
 const CardHeader = styled.section`

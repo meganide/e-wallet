@@ -47,10 +47,26 @@ const FlexRow = styled.section`
 const FlexColumn = styled.section`
   display: flex;
   flex-direction: column;
-  align-items: ${(props: IProps) =>
-    props.alignItems ? props.alignItems : 'flex-start'};
+  align-items: ${(props: IProps) => (props.alignItems ? props.alignItems : 'flex-start')};
+`;
+
+const Button = styled.button`
+  border-radius: 8px;
+  border: 1px solid;
+  font-weight: 700;
+  background-color: transparent;
+  width: 100%;
+  font-size: 1.375rem;
+  padding: 1.5rem 0;
+  margin-top: 2rem;
+  cursor: pointer;
+
+  :hover {
+    background-color: black;
+    color: white;
+  }
 `;
 
 
 
-export { H1, SecondaryParagraph, Image, Paragraph, FlexRow, FlexColumn };
+export { H1, SecondaryParagraph, Image, Paragraph, FlexRow, FlexColumn, Button };

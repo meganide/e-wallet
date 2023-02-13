@@ -15,6 +15,7 @@ interface IProps {
   };
   isStack?: boolean;
   cardNumber?: number;
+  onClick?: () => void;
 }
 
 function Card(props: IProps) {
