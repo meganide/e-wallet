@@ -46,25 +46,25 @@ function AddCard() {
       <Card cardData={cardData} />
       <Styled.Form>
         <Styled.FlexColumn>
-          <label htmlFor="cardNumber">Card Number</label>
-          <input type="text" name="cardNumber" id="cardNumber" onChange={handleChangeCardData} />
+          <Styled.Label htmlFor="cardNumber">Card Number</Styled.Label>
+          <Styled.Input type="text" name="cardNumber" id="cardNumber" onChange={handleChangeCardData} />
         </Styled.FlexColumn>
         <Styled.FlexColumn>
-          <label htmlFor="cardholderName">Cardholder name</label>
-          <input type="text" name="cardholderName" id="cardholderName" onChange={handleChangeCardData} />
+          <Styled.Label htmlFor="cardholderName">Cardholder name</Styled.Label>
+          <Styled.Input type="text" name="cardholderName" id="cardholderName" onChange={handleChangeCardData} />
         </Styled.FlexColumn>
         <Styled.FlexRow>
           <Styled.FlexColumn>
-            <label htmlFor="validThru">Valid thru</label>
-            <input type="date" name="validThru" id="validThru" onChange={handleChangeCardData} />
+            <Styled.Label htmlFor="validThru">Valid thru</Styled.Label>
+            <Styled.Input type="date" name="validThru" id="validThru" onChange={handleChangeCardData} />
           </Styled.FlexColumn>
           <Styled.FlexColumn>
-            <label htmlFor="ccv">ccv</label>
-            <input type="number" name="ccv" id="ccv" />
+            <Styled.Label htmlFor="ccv">ccv</Styled.Label>
+            <Styled.Input type="number" name="ccv" id="ccv" />
           </Styled.FlexColumn>
         </Styled.FlexRow>
         <Styled.FlexColumn>
-          <label htmlFor="vendor">Vendor</label>
+          <Styled.Label htmlFor="vendor">Vendor</Styled.Label>
           <select name="vendor" id="vendor" onChange={handleChangeCardData}>
             <option value="Bitcoin Inc">Bitcoin Inc</option>
             <option value="Block Chain Inc">Block Chain Inc</option>

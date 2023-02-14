@@ -8,4 +8,14 @@ const Form = styled.form`
   text-transform: uppercase;
 `;
 
-export { Form };
+const Label = styled.label`
+  font-size: 0.75rem;
+  color: rgba(0, 0, 0, 0.8);
+  line-height: 1.1rem;
+`;
+
+const Input = styled.input`
+  text-transform: uppercase;
+`
+
+export { Form, Label, Input };
