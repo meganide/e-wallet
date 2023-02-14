@@ -24,7 +24,17 @@ function Card(props: IProps) {
   const vendorBackgroundColor = getBackgroundColor(cardData.vendor);
 
   return (
-    <Styled.Card background={vendorBackgroundColor} {...rest}>
+    <Styled.Card
+      background={vendorBackgroundColor}
+      {...rest}
+      layout
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{
+        layout: { duration: 0.5 },
+        opacity: { duration: 0.5 },
+      }}
+    >
       <Styled.CardHeader>
         <Styled.Image src="/assets/chip-dark.svg" />
         <Styled.Image src={cardData.iconPathUrl} />
