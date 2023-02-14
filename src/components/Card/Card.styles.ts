@@ -1,4 +1,5 @@
 import { FlexColumn } from '../../styles/elements';
+import { motion } from "framer-motion"
 import styled from 'styled-components';
 
 interface IProps {
@@ -7,7 +8,7 @@ interface IProps {
   cardNumber?: number;
 }
 
-const Card = styled.section`
+const Card = styled(motion.section)`
   width: 100%;
   background: linear-gradient(248.04deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0) 99.07%),
     ${(props: IProps) => props.background};
