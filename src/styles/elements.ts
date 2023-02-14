@@ -67,6 +67,18 @@ const Button = styled.button`
   }
 `;
 
+const SecondaryButton = styled(Button)`
+  background-color: black;
+  color: white;
 
+  :hover {
+    background-color: white;
+    color: black;
+  }
+`;
 
-export { H1, SecondaryParagraph, Image, Paragraph, FlexRow, FlexColumn, Button };
+const Container = styled.section`
+  max-width: 385px;
+`;
+
+export { H1, SecondaryParagraph, Image, Paragraph, FlexRow, FlexColumn, Button, SecondaryButton, Container };

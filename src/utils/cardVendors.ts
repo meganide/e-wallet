@@ -30,10 +30,11 @@ const cardVendors = [
 ];
 
 const newCard = {
-  iconPathUrl: '/assets/chip-light.svg',
+  iconPathUrl: '/assets/vendor-bitcoin.svg',
   cardNumber: 'XXXX XXXX XXXX XXXX',
   cardholderName: 'firstname lastname',
   validThru: 'mm/yy',
+  vendor: '',
 };
 
 function getBackgroundColor(vendor: string) {

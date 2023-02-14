@@ -33,6 +33,7 @@ function Card(props: IProps) {
       transition={{
         layout: { duration: 0.5 },
         opacity: { duration: 0.5 },
+        y: { duration: 0.5 },
       }}
     >
       <Styled.CardHeader>
