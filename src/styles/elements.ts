@@ -18,7 +18,6 @@ const H1 = styled.h1`
 const Paragraph = styled.p`
   font-family: 'PT Mono', monospace;
   font-size: ${(props: IProps) => (props.fontSize ? props.fontSize : '1.6rem')};
-  box-shadow: 0.5px 0.5px 0px 0px #fefefe3d inset;
   text-align: center;
   margin: ${(props: IProps) => props.margin};
   color: ${(props: IProps) => props.color};
@@ -48,10 +47,26 @@ const FlexRow = styled.section`
 const FlexColumn = styled.section`
   display: flex;
   flex-direction: column;
-  align-items: ${(props: IProps) =>
-    props.alignItems ? props.alignItems : 'flex-start'};
+  align-items: ${(props: IProps) => (props.alignItems ? props.alignItems : 'flex-start')};
+`;
+
+const Button = styled.button`
+  border-radius: 8px;
+  border: 1px solid;
+  font-weight: 700;
+  background-color: transparent;
+  width: 100%;
+  font-size: 1.375rem;
+  padding: 1.5rem 0;
+  margin-top: 2rem;
+  cursor: pointer;
+
+  :hover {
+    background-color: black;
+    color: white;
+  }
 `;
 
 
 
-export { H1, SecondaryParagraph, Image, Paragraph, FlexRow, FlexColumn };
+export { H1, SecondaryParagraph, Image, Paragraph, FlexRow, FlexColumn, Button };
