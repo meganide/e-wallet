@@ -21,4 +21,19 @@ function getVendorIcon(vendorName: string) {
   }
 }
 
-export { formatDate, getVendorIcon };
+function getBackgroundColor(vendor: string) {
+  switch (vendor) {
+    case 'Ninja Bank':
+      return '#222222';
+    case 'Block Chain Inc':
+      return '#8B58F9';
+    case 'Evil Corp':
+      return '#F33355';
+    case 'Bitcoin Inc':
+      return '#FFAE34';
+    default:
+      return '#D0D0D0';
+  }
+}
+
+export { formatDate, getVendorIcon, getBackgroundColor };

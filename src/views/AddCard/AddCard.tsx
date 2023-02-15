@@ -14,13 +14,11 @@ function AddCard() {
     vendor: '',
   });
 
-  console.log(cardData)
-
   return (
     <Styled.Container>
       <Top heading="Add a new bank card" statusText="new card" />
       <Card cardData={cardData} />
-      <CardForm setCardData={setCardData} />
+      <CardForm setCardData={setCardData} cardData={cardData} />
     </Styled.Container>
   );
 }

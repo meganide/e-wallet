@@ -3,23 +3,27 @@ import * as StyledElements from '../../styles/elements';
 
 import { formatDate, getVendorIcon } from '../../utils/helpers';
 
+import { FormEvent } from 'react';
 import { ICardData } from '../../utils/interfaces';
+import { useNavigate } from 'react-router-dom';
 
 const Styled = { ...StyledElements, ...StyledCardForm };
 
 interface IProps {
+  cardData: ICardData;
   setCardData: React.Dispatch<React.SetStateAction<ICardData>>;
 }
 
 function CardForm(props: IProps) {
-  const { setCardData } = props;
+  const { cardData, setCardData } = props;
+
+  const navigate = useNavigate();
 
   function handleChangeCardData(e: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLSelectElement>) {
     let value = e.target.value;
 
     if (e.target.name === 'validThru') {
       value = formatDate(e.target.value);
-      console.log('value', value);
     }
 
     if (e.target.name === 'vendor') {
@@ -36,8 +40,24 @@ function CardForm(props: IProps) {
     }));
   }
 
+  function handleAddCard(e: FormEvent) {
+    e.preventDefault();
+
+    const cards = localStorage.getItem('cards');
+
+    if (cards) {
+      const cardsArray: ICardData[] = JSON.parse(cards);
+      cardsArray.push(cardData);
+      localStorage.setItem('cards', JSON.stringify(cardsArray));
+    } else {
+      localStorage.setItem('cards', JSON.stringify([cardData]));
+    }
+
+    navigate('/');
+  }
+
   return (
-    <Styled.Form>
+    <Styled.Form onSubmit={handleAddCard}>
       <Styled.FlexColumn>
         <Styled.Label htmlFor="cardNumber">Card Number</Styled.Label>
         <Styled.Input type="text" name="cardNumber" id="cardNumber" required onChange={handleChangeCardData} />
@@ -58,8 +78,8 @@ function CardForm(props: IProps) {
       </Styled.FlexRow>
       <Styled.FlexColumn>
         <Styled.Label htmlFor="vendor">Vendor</Styled.Label>
-        <Styled.Select name="vendor" id="vendor" value="" onChange={handleChangeCardData} required>
-          <option defaultValue="" value="" disabled hidden></option>
+        <Styled.Select name="vendor" id="vendor" onChange={handleChangeCardData} required>
+          <option value="" hidden></option>
           <option value="Bitcoin Inc">Bitcoin Inc</option>
           <option value="Block Chain Inc">Block Chain Inc</option>
           <option value="Evil Corp">Evil Corp</option>

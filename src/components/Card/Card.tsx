@@ -2,7 +2,7 @@ import * as CardStyled from './Card.styles';
 import * as ElementsStyled from '../../styles/elements.js';
 
 import { ICardData } from '../../utils/interfaces';
-import { getBackgroundColor } from '../../utils/cardVendors';
+import { getBackgroundColor } from '../../utils/helpers';
 
 const Styled = { ...CardStyled, ...ElementsStyled };
 
