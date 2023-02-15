@@ -1,18 +1,13 @@
 import * as CardStyled from './Card.styles';
 import * as ElementsStyled from '../../styles/elements.js';
 
-import { getBackgroundColor } from '../../utils/cardVendors';
+import { ICardData } from '../../utils/interfaces';
+import { getBackgroundColor } from '../../utils/helpers';
 
 const Styled = { ...CardStyled, ...ElementsStyled };
 
 interface IProps {
-  cardData: {
-    iconPathUrl: string;
-    cardNumber: string;
-    cardholderName: string;
-    validThru: string;
-    vendor: string;
-  };
+  cardData: ICardData;
   isStack?: boolean;
   cardNumber?: number;
   onClick?: () => void;
@@ -33,6 +28,7 @@ function Card(props: IProps) {
       transition={{
         layout: { duration: 0.5 },
         opacity: { duration: 0.5 },
+        y: { duration: 0.5 },
       }}
     >
       <Styled.CardHeader>

@@ -1,18 +1,11 @@
 import * as Styled from './CardStack.styles';
 
 import Card from '../Card/Card';
+import { ICardData } from './../../utils/interfaces';
 
 interface IProps {
-  cardVendors: ICardVendors[];
-  setCardVendors: React.Dispatch<React.SetStateAction<ICardVendors[]>>;
-}
-
-interface ICardVendors {
-  vendor: string;
-  iconPathUrl: string;
-  cardNumber: string;
-  cardholderName: string;
-  validThru: string;
+  cardVendors: ICardData[];
+  setCardVendors: React.Dispatch<React.SetStateAction<ICardData[] | []>>;
 }
 
 function CardStack(props: IProps) {
@@ -20,7 +13,9 @@ function CardStack(props: IProps) {
 
   function handleSetActiveCard(fromIndex: number) {
     const target = cardVendors.splice(fromIndex, 1)[0];
-    setCardVendors([target, ...cardVendors]);
+    const cardArray = [target, ...cardVendors];
+    setCardVendors(cardArray);
+    localStorage.setItem('cards', JSON.stringify(cardArray));
   }
 
   return (

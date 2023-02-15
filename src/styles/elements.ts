@@ -7,6 +7,8 @@ interface IProps {
   fontSize?: string;
   margin?: string;
   alignItems?: string;
+  spaceBetween?: boolean;
+  gap?: string;
 }
 
 const H1 = styled.h1`
@@ -42,6 +44,8 @@ const Image = styled.img`
 
 const FlexRow = styled.section`
   display: flex;
+  justify-content: ${(props: IProps) => props.spaceBetween && 'space-between'};
+  gap: ${(props: IProps) => props.gap && props.gap};
 `;
 
 const FlexColumn = styled.section`
@@ -67,6 +71,18 @@ const Button = styled.button`
   }
 `;
 
+const SecondaryButton = styled(Button)`
+  background-color: black;
+  color: white;
 
+  :hover {
+    background-color: white;
+    color: black;
+  }
+`;
 
-export { H1, SecondaryParagraph, Image, Paragraph, FlexRow, FlexColumn, Button };
+const Container = styled.section`
+  max-width: 385px;
+`;
+
+export { H1, SecondaryParagraph, Image, Paragraph, FlexRow, FlexColumn, Button, SecondaryButton, Container };
