@@ -16,6 +16,17 @@ const Label = styled.label`
 
 const Input = styled.input`
   text-transform: uppercase;
-`
+  padding: 0.5rem;
+  width: 100%;
+  border-radius: 0.5rem;
+  border: 1px solid rgba(0, 0, 0, 0.8);
+`;
 
-export { Form, Label, Input };
+const Select = styled.select`
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid rgba(0, 0, 0, 0.8);
+`;
+
+export { Form, Label, Input, Select };

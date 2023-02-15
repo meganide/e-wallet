@@ -7,6 +7,8 @@ interface IProps {
   fontSize?: string;
   margin?: string;
   alignItems?: string;
+  spaceBetween?: boolean;
+  gap?: string;
 }
 
 const H1 = styled.h1`
@@ -42,6 +44,8 @@ const Image = styled.img`
 
 const FlexRow = styled.section`
   display: flex;
+  justify-content: ${(props: IProps) => props.spaceBetween && 'space-between'};
+  gap: ${(props: IProps) => props.gap && props.gap};
 `;
 
 const FlexColumn = styled.section`

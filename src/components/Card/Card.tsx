@@ -1,18 +1,13 @@
 import * as CardStyled from './Card.styles';
 import * as ElementsStyled from '../../styles/elements.js';
 
+import { ICardData } from '../../utils/interfaces';
 import { getBackgroundColor } from '../../utils/cardVendors';
 
 const Styled = { ...CardStyled, ...ElementsStyled };
 
 interface IProps {
-  cardData: {
-    iconPathUrl: string;
-    cardNumber: string;
-    cardholderName: string;
-    validThru: string;
-    vendor: string;
-  };
+  cardData: ICardData;
   isStack?: boolean;
   cardNumber?: number;
   onClick?: () => void;
