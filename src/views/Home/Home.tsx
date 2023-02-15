@@ -37,9 +37,7 @@ function Home() {
   return (
     <Styled.Container>
       {cardVendors.length === 0 ? (
-        <>
-          <Top heading="E-Wallet" statusText="No cards..." />
-        </>
+        <Top heading="E-Wallet" statusText="No cards..." />
       ) : (
         <>
           <Top heading="E-Wallet" statusText="active card" />
